@@ -25,6 +25,12 @@ simd_v128_t
 simd_cnt_v128_u8 (simd_v128_t vec);
 
 simd_v128_t
+simd_cnt_v128_u16 (simd_v128_t vec);
+
+simd_v128_t
+simd_cnt_v128_u32 (simd_v128_t vec);
+
+simd_v128_t
 simd_clz_v128_u8 (simd_v128_t vec);
 
 simd_v128_t

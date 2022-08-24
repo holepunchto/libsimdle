@@ -1,7 +1,10 @@
 list(APPEND tests
   clz/v128-u8
   clz/v128-u16
+  clz/v128-u32
   cnt/v128-u8
+  cnt/v128-u16
+  cnt/v128-u32
 )
 
 foreach(test IN LISTS tests)
