@@ -18,6 +18,7 @@ target_sources(
   PRIVATE
     src/clz.c
     src/cnt.c
+    src/ctz.c
 )
 
 target_include_directories(
