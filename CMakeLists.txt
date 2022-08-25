@@ -16,9 +16,11 @@ target_sources(
   INTERFACE
     include/simd.h
   PRIVATE
+    src/clo.c
     src/clz.c
     src/cnt.c
     src/ctz.c
+    src/cto.c
 )
 
 target_include_directories(
