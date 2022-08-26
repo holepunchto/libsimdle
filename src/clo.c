@@ -1,13 +1,13 @@
 #include "../include/simd.h"
 #include "platform.h"
 
-#ifdef SIMD_ARCH_ARM
+#if defined(SIMD_ARCH_ARM)
 #include <arm_neon.h>
 #endif
 
 simd_v128_t
 simd_clo_v128_u8 (simd_v128_t vec) {
-#ifdef SIMD_ARCH_ARM
+#if defined(SIMD_ARCH_ARM)
   vec.u8 = vclzq_u8(vmvnq_u8(vec.u8));
 #endif
 
@@ -16,7 +16,7 @@ simd_clo_v128_u8 (simd_v128_t vec) {
 
 simd_v128_t
 simd_clo_v128_u16 (simd_v128_t vec) {
-#ifdef SIMD_ARCH_ARM
+#if defined(SIMD_ARCH_ARM)
   vec.u16 = vclzq_u16(vmvnq_u16(vec.u16));
 #endif
 
@@ -25,7 +25,7 @@ simd_clo_v128_u16 (simd_v128_t vec) {
 
 simd_v128_t
 simd_clo_v128_u32 (simd_v128_t vec) {
-#ifdef SIMD_ARCH_ARM
+#if defined(SIMD_ARCH_ARM)
   vec.u32 = vclzq_u32(vmvnq_u32(vec.u32));
 #endif
 
