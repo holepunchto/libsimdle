@@ -76,6 +76,17 @@ simd_cto_v128_u16 (simd_v128_t vec);
 simd_v128_t
 simd_cto_v128_u32 (simd_v128_t vec);
 
+// Bitwise not
+
+simd_v128_t
+simd_not_v128_u8 (simd_v128_t vec);
+
+simd_v128_t
+simd_not_v128_u16 (simd_v128_t vec);
+
+simd_v128_t
+simd_not_v128_u32 (simd_v128_t vec);
+
 #ifdef __cplusplus
 }
 #endif
