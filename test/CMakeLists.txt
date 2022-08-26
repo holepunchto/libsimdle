@@ -8,6 +8,9 @@ list(APPEND tests
   ctz/v128-u8
   ctz/v128-u16
   ctz/v128-u32
+  not/v128-u8
+  not/v128-u16
+  not/v128-u32
 )
 
 foreach(test IN LISTS tests)
