@@ -21,6 +21,7 @@ target_sources(
     src/cnt.c
     src/ctz.c
     src/cto.c
+    src/not.c
 )
 
 target_include_directories(
