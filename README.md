@@ -1,6 +1,6 @@
 # libsimd
 
-Portable SIMD instructions for 128 bit vectors, inspired by the WASM SIMD specification.
+Portable SIMD instructions for 128 bit vectors, inspired by the WASM SIMD specification. Designed for seamless interoperability with JavaScript typed arrays.
 
 ## API
 
