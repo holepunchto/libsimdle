@@ -1,10 +1,16 @@
-#include "../include/simd.h"
+#ifndef SIMD_CTO_H
+#define SIMD_CTO_H
+
+#include "../simd.h"
+#include "common.h"
 
 #if defined(SIMD_ARCH_ARM)
 #include <arm_neon.h>
 #endif
 
-simd_v128_t
+// Count trailing ones (cto)
+
+inline simd_v128_t
 simd_cto_v128_u8 (simd_v128_t vec) {
 #if defined(SIMD_ARCH_ARM)
   vec.u8 = vclzq_u8(vmvnq_u8(vrbitq_u8(vec.u8)));
@@ -15,7 +21,7 @@ simd_cto_v128_u8 (simd_v128_t vec) {
   return vec;
 }
 
-simd_v128_t
+inline simd_v128_t
 simd_cto_v128_u16 (simd_v128_t vec) {
 #if defined(SIMD_ARCH_ARM)
   vec.u16 = vclzq_u16(vmvnq_u16(vrbitq_u8(vec.u8)));
@@ -26,7 +32,7 @@ simd_cto_v128_u16 (simd_v128_t vec) {
   return vec;
 }
 
-simd_v128_t
+inline simd_v128_t
 simd_cto_v128_u32 (simd_v128_t vec) {
 #if defined(SIMD_ARCH_ARM)
   vec.u32 = vclzq_u32(vmvnq_u32(vrbitq_u8(vec.u8)));
@@ -36,3 +42,5 @@ simd_cto_v128_u32 (simd_v128_t vec) {
 
   return vec;
 }
+
+#endif // SIMD_CTO_H

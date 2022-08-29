@@ -1,10 +1,16 @@
-#include "../include/simd.h"
+#ifndef SIMD_CLZ_H
+#define SIMD_CLZ_H
+
+#include "../simd.h"
+#include "common.h"
 
 #if defined(SIMD_ARCH_ARM)
 #include <arm_neon.h>
 #endif
 
-simd_v128_t
+// Count leading zeroes (clz)
+
+inline simd_v128_t
 simd_clz_v128_u8 (simd_v128_t vec) {
 #if defined(SIMD_ARCH_ARM)
   vec.u8 = vclzq_u8(vec.u8);
@@ -32,7 +38,7 @@ simd_clz_v128_u8 (simd_v128_t vec) {
   return vec;
 }
 
-simd_v128_t
+inline simd_v128_t
 simd_clz_v128_u16 (simd_v128_t vec) {
 #if defined(SIMD_ARCH_ARM)
   vec.u16 = vclzq_u16(vec.u16);
@@ -63,7 +69,7 @@ simd_clz_v128_u16 (simd_v128_t vec) {
   return vec;
 }
 
-simd_v128_t
+inline simd_v128_t
 simd_clz_v128_u32 (simd_v128_t vec) {
 #if defined(SIMD_ARCH_ARM)
   vec.u32 = vclzq_u32(vec.u32);
@@ -96,3 +102,5 @@ simd_clz_v128_u32 (simd_v128_t vec) {
 
   return vec;
 }
+
+#endif // SIMD_CLZ_H

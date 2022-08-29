@@ -1,10 +1,16 @@
-#include "../include/simd.h"
+#ifndef SIMD_NOT_H
+#define SIMD_NOT_H
+
+#include "../simd.h"
+#include "common.h"
 
 #if defined(SIMD_ARCH_ARM)
 #include <arm_neon.h>
 #endif
 
-simd_v128_t
+// Bitwise not
+
+inline simd_v128_t
 simd_not_v128_u8 (simd_v128_t vec) {
 #if defined(SIMD_ARCH_ARM)
   vec.u8 = vmvnq_u8(vec.u8);
@@ -15,7 +21,7 @@ simd_not_v128_u8 (simd_v128_t vec) {
   return vec;
 }
 
-simd_v128_t
+inline simd_v128_t
 simd_not_v128_u16 (simd_v128_t vec) {
 #if defined(SIMD_ARCH_ARM)
   vec.u16 = vmvnq_u16(vec.u16);
@@ -26,7 +32,7 @@ simd_not_v128_u16 (simd_v128_t vec) {
   return vec;
 }
 
-simd_v128_t
+inline simd_v128_t
 simd_not_v128_u32 (simd_v128_t vec) {
 #if defined(SIMD_ARCH_ARM)
   vec.u32 = vmvnq_u32(vec.u32);
@@ -36,3 +42,5 @@ simd_not_v128_u32 (simd_v128_t vec) {
 
   return vec;
 }
+
+#endif // SIMD_NOT_H

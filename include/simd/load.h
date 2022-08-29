@@ -1,3 +1,6 @@
+#ifndef SIMD_LOAD_H
+#define SIMD_LOAD_H
+
 #include "../simd.h"
 #include "common.h"
 
@@ -45,3 +48,5 @@ simd_load_v128_u32 (const uint32_t arr[]) {
 
   return vec;
 }
+
+#endif // SIMD_LOAD_H

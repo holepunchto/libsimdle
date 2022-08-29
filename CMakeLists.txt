@@ -15,14 +15,16 @@ target_sources(
   simd
   INTERFACE
     include/simd.h
+    include/simd/clo.h
+    include/simd/clz.h
+    include/simd/cnt.h
+    include/simd/common.h
+    include/simd/cto.h
+    include/simd/ctz.h
+    include/simd/load.h
+    include/simd/not.h
   PRIVATE
-    src/clo.c
-    src/clz.c
-    src/cnt.c
-    src/ctz.c
-    src/cto.c
-    src/load.c
-    src/not.c
+    src/extern.c
 )
 
 target_include_directories(
@@ -50,6 +52,7 @@ set_target_properties(
 install(TARGETS simd_shared simd_static)
 
 install(FILES include/simd.h DESTINATION include)
+install(DIRECTORY include/simd DESTINATION include)
 
 enable_testing()
 
