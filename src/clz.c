@@ -1,5 +1,4 @@
 #include "../include/simd.h"
-#include "platform.h"
 
 #if defined(SIMD_ARCH_ARM)
 #include <arm_neon.h>
