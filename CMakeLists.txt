@@ -21,6 +21,7 @@ target_sources(
     src/cnt.c
     src/ctz.c
     src/cto.c
+    src/load.c
     src/not.c
 )
 

@@ -21,6 +21,15 @@ union simd_v128_u {
   simd_u64x2_t u64;
 };
 
+simd_v128_t
+simd_load_v128_u8 (const uint8_t arr[]);
+
+simd_v128_t
+simd_load_v128_u16 (const uint16_t arr[]);
+
+simd_v128_t
+simd_load_v128_u32 (const uint32_t arr[]);
+
 // Population count (cnt)
 
 simd_v128_t
