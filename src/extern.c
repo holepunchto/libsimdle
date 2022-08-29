@@ -62,3 +62,12 @@ simd_not_v128_u16 (simd_v128_t vec);
 
 extern simd_v128_t
 simd_not_v128_u32 (simd_v128_t vec);
+
+extern uint16_t
+simd_sum_v128_u8 (simd_v128_t vec);
+
+extern uint32_t
+simd_sum_v128_u16 (simd_v128_t vec);
+
+extern uint64_t
+simd_sum_v128_u32 (simd_v128_t vec);

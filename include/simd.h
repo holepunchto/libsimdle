@@ -13,6 +13,7 @@ extern "C" {
 #include "simd/ctz.h"
 #include "simd/load.h"
 #include "simd/not.h"
+#include "simd/sum.h"
 
 #ifdef __cplusplus
 }

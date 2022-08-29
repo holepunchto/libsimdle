@@ -14,6 +14,9 @@ list(APPEND tests
   not/v128-u8
   not/v128-u16
   not/v128-u32
+  sum/v128-u8
+  sum/v128-u16
+  sum/v128-u32
 )
 
 foreach(test IN LISTS tests)
