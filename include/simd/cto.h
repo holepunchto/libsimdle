@@ -1,7 +1,10 @@
 #ifndef SIMD_CTO_H
 #define SIMD_CTO_H
 
-#include "../simd.h"
+#include "arch.h"
+#include "clo.h"
+#include "not.h"
+#include "vec.h"
 
 #if defined(SIMD_ARCH_ARM)
 #include <arm_neon.h>

@@ -1,7 +1,8 @@
 #ifndef SIMD_CLZ_H
 #define SIMD_CLZ_H
 
-#include "../simd.h"
+#include "arch.h"
+#include "vec.h"
 
 #if defined(SIMD_ARCH_ARM)
 #include <arm_neon.h>
