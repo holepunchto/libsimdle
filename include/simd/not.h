@@ -2,7 +2,6 @@
 #define SIMD_NOT_H
 
 #include "../simd.h"
-#include "common.h"
 
 #if defined(SIMD_ARCH_ARM)
 #include <arm_neon.h>
