@@ -4,15 +4,11 @@
 #include "arch.h"
 #include "vec.h"
 
-#if defined(SIMD_ARCH_ARM)
-#include <arm_neon.h>
-#endif
-
 // Count leading zeroes (clz)
 
 inline simd_v128_t
 simd_clz_v128_u8 (simd_v128_t vec) {
-#if defined(SIMD_ARCH_ARM)
+#if defined(SIMD_ARCH_ARM_NEON)
   vec.u8 = vclzq_u8(vec.u8);
 #else
   for (int i = 0; i < 16; i++) {
@@ -40,7 +36,7 @@ simd_clz_v128_u8 (simd_v128_t vec) {
 
 inline simd_v128_t
 simd_clz_v128_u16 (simd_v128_t vec) {
-#if defined(SIMD_ARCH_ARM)
+#if defined(SIMD_ARCH_ARM_NEON)
   vec.u16 = vclzq_u16(vec.u16);
 #else
   for (int i = 0; i < 8; i++) {
@@ -71,7 +67,7 @@ simd_clz_v128_u16 (simd_v128_t vec) {
 
 inline simd_v128_t
 simd_clz_v128_u32 (simd_v128_t vec) {
-#if defined(SIMD_ARCH_ARM)
+#if defined(SIMD_ARCH_ARM_NEON)
   vec.u32 = vclzq_u32(vec.u32);
 #else
   for (int i = 0; i < 4; i++) {

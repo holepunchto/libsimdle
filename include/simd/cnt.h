@@ -4,15 +4,11 @@
 #include "arch.h"
 #include "vec.h"
 
-#if defined(SIMD_ARCH_ARM)
-#include <arm_neon.h>
-#endif
-
 // Population count (cnt)
 
 inline simd_v128_t
 simd_cnt_v128_u8 (simd_v128_t vec) {
-#if defined(SIMD_ARCH_ARM)
+#if defined(SIMD_ARCH_ARM_NEON)
   vec.u8 = vcntq_u8(vec.u8);
 #else
   vec.u8 -= ((vec.u8 >> 1) & 0x55);
@@ -25,7 +21,7 @@ simd_cnt_v128_u8 (simd_v128_t vec) {
 
 inline simd_v128_t
 simd_cnt_v128_u16 (simd_v128_t vec) {
-#if defined(SIMD_ARCH_ARM)
+#if defined(SIMD_ARCH_ARM_NEON)
   vec.u16 = vpaddlq_u8(vcntq_u8(vec.u8));
 #else
   vec.u16 -= ((vec.u16 >> 1) & 0x5555);
@@ -39,7 +35,7 @@ simd_cnt_v128_u16 (simd_v128_t vec) {
 
 inline simd_v128_t
 simd_cnt_v128_u32 (simd_v128_t vec) {
-#if defined(SIMD_ARCH_ARM)
+#if defined(SIMD_ARCH_ARM_NEON)
   vec.u32 = vpaddlq_u16(vpaddlq_u8(vcntq_u8(vec.u8)));
 #else
   vec.u32 -= ((vec.u32 >> 1) & 0x55555555);
