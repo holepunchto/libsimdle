@@ -10,6 +10,15 @@ extern simd_v128_t
 simd_and_v128_u32 (simd_v128_t a, simd_v128_t b);
 
 extern simd_v128_t
+simd_clear_v128_u8 (simd_v128_t a, simd_v128_t b);
+
+extern simd_v128_t
+simd_clear_v128_u16 (simd_v128_t a, simd_v128_t b);
+
+extern simd_v128_t
+simd_clear_v128_u32 (simd_v128_t a, simd_v128_t b);
+
+extern simd_v128_t
 simd_clo_v128_u8 (simd_v128_t vec);
 
 extern simd_v128_t

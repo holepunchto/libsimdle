@@ -17,6 +17,7 @@ target_sources(
     include/simd.h
     include/simd/and.h
     include/simd/arch.h
+    include/simd/clear.h
     include/simd/clo.h
     include/simd/clz.h
     include/simd/cnt.h
