@@ -4,7 +4,7 @@
 #include "arch.h"
 #include "vec.h"
 
-// Bitwise not
+// Bitwise NOT
 
 inline simd_v128_t
 simd_not_v128_u8 (simd_v128_t vec) {

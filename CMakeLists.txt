@@ -15,15 +15,19 @@ target_sources(
   simd
   INTERFACE
     include/simd.h
+    include/simd/and.h
+    include/simd/arch.h
     include/simd/clo.h
     include/simd/clz.h
     include/simd/cnt.h
-    include/simd/common.h
     include/simd/cto.h
     include/simd/ctz.h
     include/simd/load.h
     include/simd/not.h
+    include/simd/or.h
     include/simd/sum.h
+    include/simd/vec.h
+    include/simd/xor.h
   PRIVATE
     src/extern.c
 )
