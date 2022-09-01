@@ -12,6 +12,8 @@ simd_and_v128_u8 (simd_v128_t a, simd_v128_t b) {
 
 #if defined(SIMD_ARCH_ARM_NEON)
   vec.u8 = vandq_u8(a.u8, b.u8);
+#elif defined(SIMD_ARCH_INTEL_SSE2)
+  vec.u8 = _mm_and_si128(a.u8, b.u8);
 #else
   vec.u8 = a.u8 & b.u8;
 #endif
@@ -25,6 +27,8 @@ simd_and_v128_u16 (simd_v128_t a, simd_v128_t b) {
 
 #if defined(SIMD_ARCH_ARM_NEON)
   vec.u16 = vandq_u16(a.u16, b.u16);
+#elif defined(SIMD_ARCH_INTEL_SSE2)
+  vec.u16 = _mm_and_si128(a.u16, b.u16);
 #else
   vec.u16 = a.u16 & b.u16;
 #endif
@@ -38,6 +42,8 @@ simd_and_v128_u32 (simd_v128_t a, simd_v128_t b) {
 
 #if defined(SIMD_ARCH_ARM_NEON)
   vec.u32 = vandq_u32(a.u32, b.u32);
+#elif defined(SIMD_ARCH_INTEL_SSE2)
+  vec.u32 = _mm_and_si128(a.u32, b.u32);
 #else
   vec.u32 = a.u32 & b.u32;
 #endif

@@ -32,6 +32,12 @@
 #if defined(__AVX512VL__)
 #define SIMD_ARCH_INTEL_AVX512VL
 #endif
+#if defined(__AVX512BITALG__)
+#define SIMD_ARCH_INTEL_AVX512BITALG
+#endif
+#if defined(__AVX512VPOPCNTDQ__)
+#define SIMD_ARCH_INTEL_AVX512VPOPCNTDQ
+#endif
 #if defined(__BMI__)
 #define SIMD_ARCH_INTEL_BMI
 #endif
