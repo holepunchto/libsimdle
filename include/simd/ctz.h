@@ -12,7 +12,8 @@ simd_ctz_v128_u8 (simd_v128_t vec) {
   vec.u8 = vclzq_u8(vrbitq_u8(vec.u8));
 #elif defined(SIMD_ARCH_INTEL_BMI)
   for (int i = 0; i < 16; i++) {
-    vec.u8[i] = 24 - _tzcnt_u32(vec.u8[i]);
+    uint32_t c = _tzcnt_u32(vec.u8[i]);
+    vec.u8[i] = c > 8 ? 8 : c;
   }
 #else
   for (int i = 0; i < 16; i++) {
@@ -45,7 +46,8 @@ simd_ctz_v128_u16 (simd_v128_t vec) {
   vec.u16 = vclzq_u16(vrbitq_u8(vec.u8));
 #elif defined(SIMD_ARCH_INTEL_BMI)
   for (int i = 0; i < 8; i++) {
-    vec.u16[i] = 16 - _tzcnt_u32(vec.u16[i]);
+    uint32_t c = _tzcnt_u32(vec.u8[i]);
+    vec.u8[i] = c > 16 ? 16 : c;
   }
 #else
   for (int i = 0; i < 8; i++) {
