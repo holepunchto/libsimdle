@@ -1,10 +1,16 @@
 list(APPEND tests
+  clo/v128-u8
+  clo/v128-u16
+  clo/v128-u32
   clz/v128-u8
   clz/v128-u16
   clz/v128-u32
   cnt/v128-u8
   cnt/v128-u16
   cnt/v128-u32
+  cto/v128-u8
+  cto/v128-u16
+  cto/v128-u32
   ctz/v128-u8
   ctz/v128-u16
   ctz/v128-u32
