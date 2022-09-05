@@ -28,13 +28,13 @@ list(APPEND tests
 foreach(test IN LISTS tests)
   string(REPLACE "/" "_" name ${test})
 
-  add_executable(test_${name} ${test}.c)
+  add_executable(${name} ${test}.c)
 
-  target_link_libraries(test_${name} simdle_static)
+  target_link_libraries(${name} simdle_static)
 
   add_test(
     NAME ${name}
-    COMMAND test_${name}
+    COMMAND ${name}
     WORKING_DIRECTORY ${PROJECT_SOURCE_DIR}
   )
 endforeach()
