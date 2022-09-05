@@ -3,6 +3,8 @@
 
 #include <stdint.h>
 
+#include "arch.h"
+
 typedef int8_t simdle_s8x16_t __attribute__((vector_size(16), __aligned__(16)));
 typedef int16_t simdle_s16x8_t __attribute__((vector_size(16), __aligned__(16)));
 typedef int32_t simdle_s32x4_t __attribute__((vector_size(16), __aligned__(16)));
@@ -25,6 +27,10 @@ union simdle_v128_u {
   simdle_u16x8_t u16;
   simdle_u32x4_t u32;
   simdle_u64x2_t u64;
+
+#if defined(SIMDLE_ARCH_INTEL)
+  __m128i __intel;
+#endif
 };
 
 #endif // SIMDLE_VEC_H
