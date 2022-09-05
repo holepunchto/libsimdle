@@ -1,10 +1,10 @@
 #include <assert.h>
 
-#include "../../include/simd.h"
+#include "../../include/simdle.h"
 
 int
 main () {
-  simd_v128_t v = {
+  simdle_v128_t v = {
     .u16 = {
       0b0000000000000001,
       0b1000000000000001,
@@ -17,7 +17,7 @@ main () {
     },
   };
 
-  simd_v128_t r = simd_cnt_v128_u16(v);
+  simdle_v128_t r = simdle_cnt_v128_u16(v);
 
   assert(r.u16[0] == 1);
   assert(r.u16[1] == 2);

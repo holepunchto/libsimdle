@@ -1,10 +1,10 @@
-# libsimd
+# libsimdle
 
-Portable SIMD instructions for 128 bit vectors, inspired by the WASM SIMD specification. Designed for seamless interoperability with JavaScript typed arrays.
+Simple and portable SIMD instructions for 128 bit vectors, inspired by the WASM SIMD specification. Designed for seamless interoperability with JavaScript typed arrays.
 
 ## API
 
-See [`includes/simd.h`](include/simd.h) for the public API.
+See [`includes/simdle.h`](include/simdle.h) for the public API.
 
 ## License
 

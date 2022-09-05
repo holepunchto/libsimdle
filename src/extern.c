@@ -1,109 +1,109 @@
-#include "../include/simd.h"
+#include "../include/simdle.h"
 
-extern simd_v128_t
-simd_and_v128_u8 (simd_v128_t a, simd_v128_t b);
+extern simdle_v128_t
+simdle_and_v128_u8 (simdle_v128_t a, simdle_v128_t b);
 
-extern simd_v128_t
-simd_and_v128_u16 (simd_v128_t a, simd_v128_t b);
+extern simdle_v128_t
+simdle_and_v128_u16 (simdle_v128_t a, simdle_v128_t b);
 
-extern simd_v128_t
-simd_and_v128_u32 (simd_v128_t a, simd_v128_t b);
+extern simdle_v128_t
+simdle_and_v128_u32 (simdle_v128_t a, simdle_v128_t b);
 
-extern simd_v128_t
-simd_clear_v128_u8 (simd_v128_t a, simd_v128_t b);
+extern simdle_v128_t
+simdle_clear_v128_u8 (simdle_v128_t a, simdle_v128_t b);
 
-extern simd_v128_t
-simd_clear_v128_u16 (simd_v128_t a, simd_v128_t b);
+extern simdle_v128_t
+simdle_clear_v128_u16 (simdle_v128_t a, simdle_v128_t b);
 
-extern simd_v128_t
-simd_clear_v128_u32 (simd_v128_t a, simd_v128_t b);
+extern simdle_v128_t
+simdle_clear_v128_u32 (simdle_v128_t a, simdle_v128_t b);
 
-extern simd_v128_t
-simd_clo_v128_u8 (simd_v128_t vec);
+extern simdle_v128_t
+simdle_clo_v128_u8 (simdle_v128_t vec);
 
-extern simd_v128_t
-simd_clo_v128_u16 (simd_v128_t vec);
+extern simdle_v128_t
+simdle_clo_v128_u16 (simdle_v128_t vec);
 
-extern simd_v128_t
-simd_clo_v128_u32 (simd_v128_t vec);
+extern simdle_v128_t
+simdle_clo_v128_u32 (simdle_v128_t vec);
 
-extern simd_v128_t
-simd_clz_v128_u8 (simd_v128_t vec);
+extern simdle_v128_t
+simdle_clz_v128_u8 (simdle_v128_t vec);
 
-extern simd_v128_t
-simd_clz_v128_u16 (simd_v128_t vec);
+extern simdle_v128_t
+simdle_clz_v128_u16 (simdle_v128_t vec);
 
-extern simd_v128_t
-simd_clz_v128_u32 (simd_v128_t vec);
+extern simdle_v128_t
+simdle_clz_v128_u32 (simdle_v128_t vec);
 
-extern simd_v128_t
-simd_cnt_v128_u8 (simd_v128_t vec);
+extern simdle_v128_t
+simdle_cnt_v128_u8 (simdle_v128_t vec);
 
-extern simd_v128_t
-simd_cnt_v128_u16 (simd_v128_t vec);
+extern simdle_v128_t
+simdle_cnt_v128_u16 (simdle_v128_t vec);
 
-extern simd_v128_t
-simd_cnt_v128_u32 (simd_v128_t vec);
+extern simdle_v128_t
+simdle_cnt_v128_u32 (simdle_v128_t vec);
 
-extern simd_v128_t
-simd_cto_v128_u8 (simd_v128_t vec);
+extern simdle_v128_t
+simdle_cto_v128_u8 (simdle_v128_t vec);
 
-extern simd_v128_t
-simd_cto_v128_u16 (simd_v128_t vec);
+extern simdle_v128_t
+simdle_cto_v128_u16 (simdle_v128_t vec);
 
-extern simd_v128_t
-simd_cto_v128_u32 (simd_v128_t vec);
+extern simdle_v128_t
+simdle_cto_v128_u32 (simdle_v128_t vec);
 
-extern simd_v128_t
-simd_ctz_v128_u8 (simd_v128_t vec);
+extern simdle_v128_t
+simdle_ctz_v128_u8 (simdle_v128_t vec);
 
-extern simd_v128_t
-simd_ctz_v128_u16 (simd_v128_t vec);
+extern simdle_v128_t
+simdle_ctz_v128_u16 (simdle_v128_t vec);
 
-extern simd_v128_t
-simd_ctz_v128_u32 (simd_v128_t vec);
+extern simdle_v128_t
+simdle_ctz_v128_u32 (simdle_v128_t vec);
 
-extern simd_v128_t
-simd_load_v128_u8 (const uint8_t arr[]);
+extern simdle_v128_t
+simdle_load_v128_u8 (const uint8_t arr[]);
 
-extern simd_v128_t
-simd_load_v128_u16 (const uint16_t arr[]);
+extern simdle_v128_t
+simdle_load_v128_u16 (const uint16_t arr[]);
 
-extern simd_v128_t
-simd_load_v128_u32 (const uint32_t arr[]);
+extern simdle_v128_t
+simdle_load_v128_u32 (const uint32_t arr[]);
 
-extern simd_v128_t
-simd_not_v128_u8 (simd_v128_t vec);
+extern simdle_v128_t
+simdle_not_v128_u8 (simdle_v128_t vec);
 
-extern simd_v128_t
-simd_not_v128_u16 (simd_v128_t vec);
+extern simdle_v128_t
+simdle_not_v128_u16 (simdle_v128_t vec);
 
-extern simd_v128_t
-simd_not_v128_u32 (simd_v128_t vec);
+extern simdle_v128_t
+simdle_not_v128_u32 (simdle_v128_t vec);
 
-extern simd_v128_t
-simd_or_v128_u8 (simd_v128_t a, simd_v128_t b);
+extern simdle_v128_t
+simdle_or_v128_u8 (simdle_v128_t a, simdle_v128_t b);
 
-extern simd_v128_t
-simd_or_v128_u16 (simd_v128_t a, simd_v128_t b);
+extern simdle_v128_t
+simdle_or_v128_u16 (simdle_v128_t a, simdle_v128_t b);
 
-extern simd_v128_t
-simd_or_v128_u32 (simd_v128_t a, simd_v128_t b);
+extern simdle_v128_t
+simdle_or_v128_u32 (simdle_v128_t a, simdle_v128_t b);
 
 extern uint16_t
-simd_sum_v128_u8 (simd_v128_t vec);
+simdle_sum_v128_u8 (simdle_v128_t vec);
 
 extern uint32_t
-simd_sum_v128_u16 (simd_v128_t vec);
+simdle_sum_v128_u16 (simdle_v128_t vec);
 
 extern uint64_t
-simd_sum_v128_u32 (simd_v128_t vec);
+simdle_sum_v128_u32 (simdle_v128_t vec);
 
-extern simd_v128_t
-simd_xor_v128_u8 (simd_v128_t a, simd_v128_t b);
+extern simdle_v128_t
+simdle_xor_v128_u8 (simdle_v128_t a, simdle_v128_t b);
 
-extern simd_v128_t
-simd_xor_v128_u16 (simd_v128_t a, simd_v128_t b);
+extern simdle_v128_t
+simdle_xor_v128_u16 (simdle_v128_t a, simdle_v128_t b);
 
-extern simd_v128_t
-simd_xor_v128_u32 (simd_v128_t a, simd_v128_t b);
+extern simdle_v128_t
+simdle_xor_v128_u32 (simdle_v128_t a, simdle_v128_t b);

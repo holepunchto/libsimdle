@@ -1,64 +1,64 @@
 cmake_minimum_required(VERSION 3.22)
 
-project(simd C)
+project(simdle C)
 
-add_library(simd OBJECT)
+add_library(simdle OBJECT)
 
 set_target_properties(
-  simd
+  simdle
   PROPERTIES
   C_STANDARD 99
   POSITION_INDEPENDENT_CODE 1
 )
 
 target_sources(
-  simd
+  simdle
   INTERFACE
-    include/simd.h
-    include/simd/and.h
-    include/simd/arch.h
-    include/simd/clear.h
-    include/simd/clo.h
-    include/simd/clz.h
-    include/simd/cnt.h
-    include/simd/cto.h
-    include/simd/ctz.h
-    include/simd/load.h
-    include/simd/not.h
-    include/simd/or.h
-    include/simd/sum.h
-    include/simd/vec.h
-    include/simd/xor.h
+    include/simdle.h
+    include/simdle/and.h
+    include/simdle/arch.h
+    include/simdle/clear.h
+    include/simdle/clo.h
+    include/simdle/clz.h
+    include/simdle/cnt.h
+    include/simdle/cto.h
+    include/simdle/ctz.h
+    include/simdle/load.h
+    include/simdle/not.h
+    include/simdle/or.h
+    include/simdle/sum.h
+    include/simdle/vec.h
+    include/simdle/xor.h
   PRIVATE
     src/extern.c
 )
 
 target_include_directories(
-  simd
+  simdle
   PUBLIC
     include
 )
 
-add_library(simd_shared SHARED $<TARGET_OBJECTS:simd>)
+add_library(simdle_shared SHARED $<TARGET_OBJECTS:simdle>)
 
 set_target_properties(
-  simd_shared
+  simdle_shared
   PROPERTIES
-  OUTPUT_NAME simd
+  OUTPUT_NAME simdle
 )
 
-add_library(simd_static STATIC $<TARGET_OBJECTS:simd>)
+add_library(simdle_static STATIC $<TARGET_OBJECTS:simdle>)
 
 set_target_properties(
-  simd_static
+  simdle_static
   PROPERTIES
-  OUTPUT_NAME simd
+  OUTPUT_NAME simdle
 )
 
-install(TARGETS simd_shared simd_static)
+install(TARGETS simdle_shared simdle_static)
 
-install(FILES include/simd.h DESTINATION include)
-install(DIRECTORY include/simd DESTINATION include)
+install(FILES include/simdle.h DESTINATION include)
+install(DIRECTORY include/simdle DESTINATION include)
 
 enable_testing()
 

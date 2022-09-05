@@ -1,14 +1,14 @@
-#ifndef SIMD_SUM_H
-#define SIMD_SUM_H
+#ifndef SIMDLE_SUM_H
+#define SIMDLE_SUM_H
 
 #include "arch.h"
 #include "vec.h"
 
 inline uint16_t
-simd_sum_v128_u8 (simd_v128_t vec) {
+simdle_sum_v128_u8 (simdle_v128_t vec) {
   uint16_t r = 0;
 
-#if defined(SIMD_ARCH_ARM_NEON)
+#if defined(SIMDLE_ARCH_ARM_NEON)
   r = vaddlvq_u8(vec.u8);
 #else
   for (int i = 0; i < 16; i++) {
@@ -20,10 +20,10 @@ simd_sum_v128_u8 (simd_v128_t vec) {
 }
 
 inline uint32_t
-simd_sum_v128_u16 (simd_v128_t vec) {
+simdle_sum_v128_u16 (simdle_v128_t vec) {
   uint32_t r = 0;
 
-#if defined(SIMD_ARCH_ARM_NEON)
+#if defined(SIMDLE_ARCH_ARM_NEON)
   r = vaddlvq_u16(vec.u16);
 #else
   for (int i = 0; i < 8; i++) {
@@ -35,10 +35,10 @@ simd_sum_v128_u16 (simd_v128_t vec) {
 }
 
 inline uint64_t
-simd_sum_v128_u32 (simd_v128_t vec) {
+simdle_sum_v128_u32 (simdle_v128_t vec) {
   uint64_t r = 0;
 
-#if defined(SIMD_ARCH_ARM_NEON)
+#if defined(SIMDLE_ARCH_ARM_NEON)
   r = vaddlvq_u32(vec.u32);
 #else
   for (int i = 0; i < 4; i++) {
@@ -49,4 +49,4 @@ simd_sum_v128_u32 (simd_v128_t vec) {
   return r;
 }
 
-#endif // SIMD_SUM_H
+#endif // SIMDLE_SUM_H

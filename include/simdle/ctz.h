@@ -1,16 +1,16 @@
-#ifndef SIMD_CTZ_H
-#define SIMD_CTZ_H
+#ifndef SIMDLE_CTZ_H
+#define SIMDLE_CTZ_H
 
 #include "arch.h"
 #include "vec.h"
 
 // Count trailing zeroes (ctz)
 
-inline simd_v128_t
-simd_ctz_v128_u8 (simd_v128_t vec) {
-#if defined(SIMD_ARCH_ARM_NEON)
+inline simdle_v128_t
+simdle_ctz_v128_u8 (simdle_v128_t vec) {
+#if defined(SIMDLE_ARCH_ARM_NEON)
   vec.u8 = vclzq_u8(vrbitq_u8(vec.u8));
-#elif defined(SIMD_ARCH_INTEL_BMI)
+#elif defined(SIMDLE_ARCH_INTEL_BMI)
   for (int i = 0; i < 16; i++) {
     uint32_t c = _tzcnt_u32(vec.u8[i]);
     vec.u8[i] = c > 8 ? 8 : c;
@@ -40,11 +40,11 @@ simd_ctz_v128_u8 (simd_v128_t vec) {
   return vec;
 }
 
-inline simd_v128_t
-simd_ctz_v128_u16 (simd_v128_t vec) {
-#if defined(SIMD_ARCH_ARM_NEON)
+inline simdle_v128_t
+simdle_ctz_v128_u16 (simdle_v128_t vec) {
+#if defined(SIMDLE_ARCH_ARM_NEON)
   vec.u16 = vclzq_u16(vrev16q_u8(vrbitq_u8(vec.u8)));
-#elif defined(SIMD_ARCH_INTEL_BMI)
+#elif defined(SIMDLE_ARCH_INTEL_BMI)
   for (int i = 0; i < 8; i++) {
     uint32_t c = _tzcnt_u32(vec.u8[i]);
     vec.u8[i] = c > 16 ? 16 : c;
@@ -77,11 +77,11 @@ simd_ctz_v128_u16 (simd_v128_t vec) {
   return vec;
 }
 
-inline simd_v128_t
-simd_ctz_v128_u32 (simd_v128_t vec) {
-#if defined(SIMD_ARCH_ARM_NEON)
+inline simdle_v128_t
+simdle_ctz_v128_u32 (simdle_v128_t vec) {
+#if defined(SIMDLE_ARCH_ARM_NEON)
   vec.u32 = vclzq_u32(vrev32q_u8(vrbitq_u8(vec.u8)));
-#elif defined(SIMD_ARCH_INTEL_BMI)
+#elif defined(SIMDLE_ARCH_INTEL_BMI)
   for (int i = 0; i < 4; i++) {
     vec.u32[i] = _tzcnt_u32(vec.u32[i]);
   }
@@ -116,4 +116,4 @@ simd_ctz_v128_u32 (simd_v128_t vec) {
   return vec;
 }
 
-#endif // SIMD_CTZ_H
+#endif // SIMDLE_CTZ_H
