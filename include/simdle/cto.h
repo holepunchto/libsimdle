@@ -2,7 +2,7 @@
 #define SIMDLE_CTO_H
 
 #include "arch.h"
-#include "clo.h"
+#include "ctz.h"
 #include "not.h"
 #include "vec.h"
 
