@@ -16,4 +16,5 @@ jobs:
     - uses: actions/checkout@v2
     - run: cmake -S . -B build
     - run: cmake --build build
-    - run: ctest --verbose --test-dir build/test
+    - run: ctest --verbose
+      working-directory: build/test
