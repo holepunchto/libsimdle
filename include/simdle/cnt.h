@@ -13,10 +13,13 @@ simdle_cnt_v128_u8 (simdle_v128_t vec) {
 #elif defined(SIMDLE_ARCH_INTEL_AVX512BITALG) && defined(SIMDLE_ARCH_INTEL_AVX512VL)
   vec.__intel = _mm_popcnt_epi8(vec.__intel);
 #else
-  for (int i = 0; i < 16; i++) {
-    vec.u8[i] -= ((vec.u8[i] >> 1) & 0x55);
-    vec.u8[i] = ((vec.u8[i] & 0x33) + ((vec.u8[i] >> 2) & 0x33));
-    vec.u8[i] = (vec.u8[i] + (vec.u8[i] >> 4)) & 0xf;
+  for (size_t i = 0; i < 16; i++) {
+    uint32_t v = vec.u8[i];
+    v -= ((v >> 1) & 0x55555555);
+    v = ((v & 0x33333333) + ((v >> 2) & 0x33333333));
+    v = (v + (v >> 4)) & 0xf0f0f0f;
+    v = (v * 0x1010101) >> 24;
+    vec.u8[i] = v;
   }
 #endif
 
@@ -30,11 +33,13 @@ simdle_cnt_v128_u16 (simdle_v128_t vec) {
 #elif defined(SIMDLE_ARCH_INTEL_AVX512BITALG) && defined(SIMDLE_ARCH_INTEL_AVX512VL)
   vec.__intel = _mm_popcnt_epi16(vec.__intel);
 #else
-  for (int i = 0; i < 8; i++) {
-    vec.u16[i] -= ((vec.u16[i] >> 1) & 0x5555);
-    vec.u16[i] = ((vec.u16[i] & 0x3333) + ((vec.u16[i] >> 2) & 0x3333));
-    vec.u16[i] = (vec.u16[i] + (vec.u16[i] >> 4)) & 0xf0f;
-    vec.u16[i] = (vec.u16[i] * 0x101) >> 8;
+  for (size_t i = 0; i < 8; i++) {
+    uint32_t v = vec.u16[i];
+    v -= ((v >> 1) & 0x55555555);
+    v = ((v & 0x33333333) + ((v >> 2) & 0x33333333));
+    v = (v + (v >> 4)) & 0xf0f0f0f;
+    v = (v * 0x1010101) >> 24;
+    vec.u16[i] = v;
   }
 #endif
 
@@ -48,11 +53,13 @@ simdle_cnt_v128_u32 (simdle_v128_t vec) {
 #elif defined(SIMDLE_ARCH_INTEL_AVX512VPOPCNTDQ) && defined(SIMDLE_ARCH_INTEL_AVX512VL)
   vec.__intel = _mm_popcnt_epi32(vec.__intel);
 #else
-  for (int i = 0; i < 4; i++) {
-    vec.u32[i] -= ((vec.u32[i] >> 1) & 0x55555555);
-    vec.u32[i] = ((vec.u32[i] & 0x33333333) + ((vec.u32[i] >> 2) & 0x33333333));
-    vec.u32[i] = (vec.u32[i] + (vec.u32[i] >> 4)) & 0xf0f0f0f;
-    vec.u32[i] = (vec.u32[i] * 0x1010101) >> 24;
+  for (size_t i = 0; i < 4; i++) {
+    uint32_t v = vec.u32[i];
+    v -= ((v >> 1) & 0x55555555);
+    v = ((v & 0x33333333) + ((v >> 2) & 0x33333333));
+    v = (v + (v >> 4)) & 0xf0f0f0f;
+    v = (v * 0x1010101) >> 24;
+    vec.u32[i] = v;
   }
 #endif
 
