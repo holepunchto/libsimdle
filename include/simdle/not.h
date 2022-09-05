@@ -13,7 +13,9 @@ simdle_not_v128_u8 (simdle_v128_t vec) {
 #elif defined(SIMDLE_ARCH_INTEL_SSE2)
   vec.__intel = _mm_xor_si128(vec.__intel, _mm_cmpeq_epi8(vec.__intel, vec.__intel));
 #else
-  vec.u8 = ~vec.u8;
+  for (int i = 0; i < 16; i++) {
+    vec.u8[i] = ~vec.u8[i];
+  }
 #endif
 
   return vec;
@@ -26,7 +28,9 @@ simdle_not_v128_u16 (simdle_v128_t vec) {
 #elif defined(SIMDLE_ARCH_INTEL_SSE2)
   vec.__intel = _mm_xor_si128(vec.__intel, _mm_cmpeq_epi16(vec.__intel, vec.__intel));
 #else
-  vec.u16 = ~vec.u16;
+  for (int i = 0; i < 8; i++) {
+    vec.u16[i] = ~vec.u16[i];
+  }
 #endif
 
   return vec;
@@ -39,7 +43,9 @@ simdle_not_v128_u32 (simdle_v128_t vec) {
 #elif defined(SIMDLE_ARCH_INTEL_SSE2)
   vec.__intel = _mm_xor_si128(vec.__intel, _mm_cmpeq_epi32(vec.__intel, vec.__intel));
 #else
-  vec.u32 = ~vec.u32;
+  for (int i = 0; i < 4; i++) {
+    vec.u32[i] = ~vec.u32[i];
+  }
 #endif
 
   return vec;

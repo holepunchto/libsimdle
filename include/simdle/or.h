@@ -15,7 +15,9 @@ simdle_or_v128_u8 (simdle_v128_t a, simdle_v128_t b) {
 #elif defined(SIMDLE_ARCH_INTEL_SSE2)
   vec.__intel = _mm_or_si128(a.__intel, b.__intel);
 #else
-  vec.u8 = a.u8 | b.u8;
+  for (int i = 0; i < 16; i++) {
+    vec.u8[i] = a.u8[i] | b.u8[i];
+  }
 #endif
 
   return vec;
@@ -30,7 +32,9 @@ simdle_or_v128_u16 (simdle_v128_t a, simdle_v128_t b) {
 #elif defined(SIMDLE_ARCH_INTEL_SSE2)
   vec.__intel = _mm_or_si128(a.__intel, b.__intel);
 #else
-  vec.u16 = a.u16 | b.u16;
+  for (int i = 0; i < 8; i++) {
+    vec.u16[i] = a.u16[i] | b.u16[i];
+  }
 #endif
 
   return vec;
@@ -45,7 +49,9 @@ simdle_or_v128_u32 (simdle_v128_t a, simdle_v128_t b) {
 #elif defined(SIMDLE_ARCH_INTEL_SSE2)
   vec.__intel = _mm_or_si128(a.__intel, b.__intel);
 #else
-  vec.u32 = a.u32 | b.u32;
+  for (int i = 0; i < 4; i++) {
+    vec.u32[i] = a.u32[i] | b.u32[i];
+  }
 #endif
 
   return vec;
