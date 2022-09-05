@@ -60,6 +60,7 @@ install(TARGETS simdle_shared simdle_static)
 install(FILES include/simdle.h DESTINATION include)
 install(DIRECTORY include/simdle DESTINATION include)
 
-enable_testing()
-
-add_subdirectory(test)
+if(PROJECT_IS_TOP_LEVEL)
+  enable_testing()
+  add_subdirectory(test)
+endif()
