@@ -5,15 +5,21 @@
 
 #include "arch.h"
 
-typedef int8_t simdle_s8x16_t __attribute__((vector_size(16), __aligned__(16)));
-typedef int16_t simdle_s16x8_t __attribute__((vector_size(16), __aligned__(16)));
-typedef int32_t simdle_s32x4_t __attribute__((vector_size(16), __aligned__(16)));
-typedef int64_t simdle_s64x2_t __attribute__((vector_size(16), __aligned__(16)));
+#if defined(_MSC_VER)
+#define SIMDLE_VECTOR(name, type, size) type name[size / sizeof(type)]
+#else
+#define SIMDLE_VECTOR(name, type, size) type name __attribute__((vector_size(size), __aligned__(size)))
+#endif
 
-typedef uint8_t simdle_u8x16_t __attribute__((vector_size(16), __aligned__(16)));
-typedef uint16_t simdle_u16x8_t __attribute__((vector_size(16), __aligned__(16)));
-typedef uint32_t simdle_u32x4_t __attribute__((vector_size(16), __aligned__(16)));
-typedef uint64_t simdle_u64x2_t __attribute__((vector_size(16), __aligned__(16)));
+typedef SIMDLE_VECTOR(simdle_s8x16_t, int8_t, 16);
+typedef SIMDLE_VECTOR(simdle_s16x8_t, int16_t, 16);
+typedef SIMDLE_VECTOR(simdle_s32x4_t, int32_t, 16);
+typedef SIMDLE_VECTOR(simdle_s64x2_t, int64_t, 16);
+
+typedef SIMDLE_VECTOR(simdle_u8x16_t, uint8_t, 16);
+typedef SIMDLE_VECTOR(simdle_u16x8_t, uint16_t, 16);
+typedef SIMDLE_VECTOR(simdle_u32x4_t, uint32_t, 16);
+typedef SIMDLE_VECTOR(simdle_u64x2_t, uint64_t, 16);
 
 typedef union simdle_v128_u simdle_v128_t;
 
