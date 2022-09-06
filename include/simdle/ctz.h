@@ -43,7 +43,8 @@ simdle_ctz_v128_u8 (simdle_v128_t vec) {
 inline simdle_v128_t
 simdle_ctz_v128_u16 (simdle_v128_t vec) {
 #if defined(SIMDLE_ARCH_ARM_NEON)
-  vec.u16 = vclzq_u16(vrev16q_u8(vrbitq_u8(vec.u8)));
+  vec.u8 = vrev16q_u8(vrbitq_u8(vec.u8));
+  vec.u16 = vclzq_u16(vec.u16);
 #elif defined(SIMDLE_ARCH_INTEL_BMI)
   for (int i = 0; i < 8; i++) {
     uint32_t c = _tzcnt_u32(vec.u8[i]);
@@ -80,7 +81,8 @@ simdle_ctz_v128_u16 (simdle_v128_t vec) {
 inline simdle_v128_t
 simdle_ctz_v128_u32 (simdle_v128_t vec) {
 #if defined(SIMDLE_ARCH_ARM_NEON)
-  vec.u32 = vclzq_u32(vrev32q_u8(vrbitq_u8(vec.u8)));
+  vec.u8 = vrev32q_u8(vrbitq_u8(vec.u8));
+  vec.u32 = vclzq_u32(vec.u32);
 #elif defined(SIMDLE_ARCH_INTEL_BMI)
   for (int i = 0; i < 4; i++) {
     vec.u32[i] = _tzcnt_u32(vec.u32[i]);
