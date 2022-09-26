@@ -30,7 +30,7 @@ foreach(test IN LISTS tests)
 
   add_executable(${name} ${test}.c)
 
-  target_link_libraries(${name} simdle_static)
+  target_link_libraries(${name} simdle_shared)
 
   add_test(
     NAME ${name}
