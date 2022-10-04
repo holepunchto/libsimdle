@@ -23,4 +23,5 @@ extern "C" {
 #ifdef __cplusplus
 }
 #endif
+
 #endif // SIMDLE_H

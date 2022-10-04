@@ -1,4 +1,10 @@
 list(APPEND tests
+  and/v128-u8
+  and/v128-u16
+  and/v128-u32
+  clear/v128-u8
+  clear/v128-u16
+  clear/v128-u32
   clo/v128-u8
   clo/v128-u16
   clo/v128-u32
@@ -20,9 +26,15 @@ list(APPEND tests
   not/v128-u8
   not/v128-u16
   not/v128-u32
+  or/v128-u8
+  or/v128-u16
+  or/v128-u32
   sum/v128-u8
   sum/v128-u16
   sum/v128-u32
+  xor/v128-u8
+  xor/v128-u16
+  xor/v128-u32
 )
 
 foreach(test IN LISTS tests)
