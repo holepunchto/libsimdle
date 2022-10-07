@@ -5,6 +5,8 @@
 extern "C" {
 #endif
 
+#include "simdle/allo.h"
+#include "simdle/allz.h"
 #include "simdle/and.h"
 #include "simdle/arch.h"
 #include "simdle/clear.h"

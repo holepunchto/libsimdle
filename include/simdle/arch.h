@@ -23,6 +23,12 @@
 #if defined(__SSE2__)
 #define SIMDLE_ARCH_INTEL_SSE2
 #endif
+#if defined(__SSE4_1__)
+#define SIMDLE_ARCH_INTEL_SSE4_1
+#endif
+#if defined(__SSE4_2__)
+#define SIMDLE_ARCH_INTEL_SSE4_2
+#endif
 #if defined(__AVX__)
 #define SIMDLE_ARCH_INTEL_AVX
 #endif
@@ -51,6 +57,10 @@
 
 #if defined(SIMDLE_ARCH_INTEL_AVX) || defined(SIMDLE_ARCH_INTEL_BMI)
 #include <immintrin.h>
+#elif defined(SIMDLE_ARCH_INTEL_SSE4_2)
+#include <nmmintrin.h>
+#elif defined(SIMDLE_ARCH_INTEL_SSE4_1)
+#include <smmintrin.h>
 #elif defined(SIMDLE_ARCH_INTEL_SSE2)
 #include <emmintrin.h>
 #endif

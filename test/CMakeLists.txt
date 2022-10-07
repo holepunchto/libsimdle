@@ -1,4 +1,6 @@
 list(APPEND tests
+  allo/v128
+  allz/v128
   and/v128-u8
   and/v128-u16
   and/v128-u32

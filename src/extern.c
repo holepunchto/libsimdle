@@ -1,5 +1,11 @@
 #include "../include/simdle.h"
 
+extern bool
+simdle_allo_v128 (simdle_v128_t vec);
+
+extern bool
+simdle_allz_v128 (simdle_v128_t vec);
+
 extern simdle_v128_t
 simdle_and_v128_u8 (simdle_v128_t a, simdle_v128_t b);
 
