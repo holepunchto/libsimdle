@@ -4,7 +4,7 @@ Simple and portable SIMD instructions for 128 bit vectors, inspired by the WASM 
 
 ## API
 
-See [`includes/simdle.h`](include/simdle.h) for the public API.
+See [`include/simdle.h`](include/simdle.h) for the public API.
 
 ## License
 
