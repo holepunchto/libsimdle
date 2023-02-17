@@ -1,11 +1,5 @@
 cmake_minimum_required(VERSION 3.22)
 
-set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
-
-if (WIN32)
-  set(CMAKE_WINDOWS_EXPORT_ALL_SYMBOLS ON)
-endif()
-
 project(simdle C)
 
 add_library(simdle OBJECT)
@@ -14,7 +8,7 @@ set_target_properties(
   simdle
   PROPERTIES
   C_STANDARD 99
-  POSITION_INDEPENDENT_CODE 1
+  POSITION_INDEPENDENT_CODE ON
 )
 
 target_sources(
@@ -53,6 +47,7 @@ set_target_properties(
   simdle_shared
   PROPERTIES
   OUTPUT_NAME simdle
+  WINDOWS_EXPORT_ALL_SYMBOLS ON
 )
 
 add_library(simdle_static STATIC $<TARGET_OBJECTS:simdle>)
@@ -66,6 +61,7 @@ set_target_properties(
 install(TARGETS simdle_shared simdle_static)
 
 install(FILES include/simdle.h DESTINATION include)
+
 install(DIRECTORY include/simdle DESTINATION include)
 
 if(PROJECT_IS_TOP_LEVEL)
