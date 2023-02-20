@@ -56,6 +56,7 @@ set_target_properties(
   simdle_static
   PROPERTIES
   OUTPUT_NAME simdle
+  PREFIX lib
 )
 
 install(TARGETS simdle_shared simdle_static)
