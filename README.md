@@ -8,4 +8,4 @@ See [`include/simdle.h`](include/simdle.h) for the public API.
 
 ## License
 
-ISC
+Apache 2.0
