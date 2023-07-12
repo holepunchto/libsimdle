@@ -18,6 +18,7 @@ extern "C" {
 #include "simdle/load.h"
 #include "simdle/not.h"
 #include "simdle/or.h"
+#include "simdle/store.h"
 #include "simdle/sum.h"
 #include "simdle/vec.h"
 #include "simdle/xor.h"
