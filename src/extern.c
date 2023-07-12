@@ -96,6 +96,15 @@ simdle_or_v128_u16 (simdle_v128_t a, simdle_v128_t b);
 extern simdle_v128_t
 simdle_or_v128_u32 (simdle_v128_t a, simdle_v128_t b);
 
+extern void
+simdle_store_v128_u8 (uint8_t arr[], simdle_v128_t vec);
+
+extern void
+simdle_store_v128_u16 (uint16_t arr[], simdle_v128_t vec);
+
+extern void
+simdle_store_v128_u32 (uint32_t arr[], simdle_v128_t vec);
+
 extern uint16_t
 simdle_sum_v128_u8 (simdle_v128_t vec);
 
