@@ -42,13 +42,19 @@ target_include_directories(
     include
 )
 
-add_library(simdle_shared SHARED $<TARGET_OBJECTS:simdle>)
+add_library(simdle_shared SHARED)
 
 set_target_properties(
   simdle_shared
   PROPERTIES
   OUTPUT_NAME simdle
   WINDOWS_EXPORT_ALL_SYMBOLS ON
+)
+
+target_link_libraries(
+  simdle_shared
+  PUBLIC
+    simdle
 )
 
 add_library(simdle_static STATIC $<TARGET_OBJECTS:simdle>)
@@ -60,6 +66,12 @@ set_target_properties(
   PREFIX lib
 )
 
+target_link_libraries(
+  simdle_static
+  PUBLIC
+    simdle
+)
+
 install(TARGETS simdle_shared simdle_static)
 
 install(FILES include/simdle.h DESTINATION include)
@@ -68,5 +80,6 @@ install(DIRECTORY include/simdle DESTINATION include)
 
 if(PROJECT_IS_TOP_LEVEL)
   enable_testing()
+
   add_subdirectory(test)
 endif()
