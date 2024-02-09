@@ -57,7 +57,7 @@ target_link_libraries(
     simdle
 )
 
-add_library(simdle_static STATIC $<TARGET_OBJECTS:simdle>)
+add_library(simdle_static STATIC)
 
 set_target_properties(
   simdle_static
