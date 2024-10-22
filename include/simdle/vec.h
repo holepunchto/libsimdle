@@ -5,11 +5,7 @@
 
 #include "arch.h"
 
-#if defined(_MSC_VER)
-#define SIMDLE_VECTOR(name, type, size) type name[size / sizeof(type)]
-#else
 #define SIMDLE_VECTOR(name, type, size) type name __attribute__((vector_size(size), __aligned__(size)))
-#endif
 
 typedef SIMDLE_VECTOR(simdle_s8x16_t, int8_t, 16);
 typedef SIMDLE_VECTOR(simdle_s16x8_t, int16_t, 16);
