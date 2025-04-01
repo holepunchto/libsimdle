@@ -7,7 +7,7 @@
 // Bitwise XOR
 
 inline simdle_v128_t
-simdle_xor_v128_u8 (simdle_v128_t a, simdle_v128_t b) {
+simdle_xor_v128_u8(simdle_v128_t a, simdle_v128_t b) {
   simdle_v128_t vec;
 
 #if defined(SIMDLE_ARCH_ARM_NEON)
@@ -24,7 +24,7 @@ simdle_xor_v128_u8 (simdle_v128_t a, simdle_v128_t b) {
 }
 
 inline simdle_v128_t
-simdle_xor_v128_u16 (simdle_v128_t a, simdle_v128_t b) {
+simdle_xor_v128_u16(simdle_v128_t a, simdle_v128_t b) {
   simdle_v128_t vec;
 
 #if defined(SIMDLE_ARCH_ARM_NEON)
@@ -41,7 +41,7 @@ simdle_xor_v128_u16 (simdle_v128_t a, simdle_v128_t b) {
 }
 
 inline simdle_v128_t
-simdle_xor_v128_u32 (simdle_v128_t a, simdle_v128_t b) {
+simdle_xor_v128_u32(simdle_v128_t a, simdle_v128_t b) {
   simdle_v128_t vec;
 
 #if defined(SIMDLE_ARCH_ARM_NEON)

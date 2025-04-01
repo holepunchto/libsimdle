@@ -7,7 +7,7 @@
 // Count trailing zeroes (ctz)
 
 inline simdle_v128_t
-simdle_ctz_v128_u8 (simdle_v128_t vec) {
+simdle_ctz_v128_u8(simdle_v128_t vec) {
 #if defined(SIMDLE_ARCH_ARM_NEON)
   vec.u8 = vclzq_u8(vrbitq_u8(vec.u8));
 #elif defined(SIMDLE_ARCH_INTEL_BMI)
@@ -41,7 +41,7 @@ simdle_ctz_v128_u8 (simdle_v128_t vec) {
 }
 
 inline simdle_v128_t
-simdle_ctz_v128_u16 (simdle_v128_t vec) {
+simdle_ctz_v128_u16(simdle_v128_t vec) {
 #if defined(SIMDLE_ARCH_ARM_NEON)
   vec.u8 = vrev16q_u8(vrbitq_u8(vec.u8));
   vec.u16 = vclzq_u16(vec.u16);
@@ -79,7 +79,7 @@ simdle_ctz_v128_u16 (simdle_v128_t vec) {
 }
 
 inline simdle_v128_t
-simdle_ctz_v128_u32 (simdle_v128_t vec) {
+simdle_ctz_v128_u32(simdle_v128_t vec) {
 #if defined(SIMDLE_ARCH_ARM_NEON)
   vec.u8 = vrev32q_u8(vrbitq_u8(vec.u8));
   vec.u32 = vclzq_u32(vec.u32);

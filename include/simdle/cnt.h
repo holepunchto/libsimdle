@@ -7,7 +7,7 @@
 // Population count (cnt)
 
 inline simdle_v128_t
-simdle_cnt_v128_u8 (simdle_v128_t vec) {
+simdle_cnt_v128_u8(simdle_v128_t vec) {
 #if defined(SIMDLE_ARCH_ARM_NEON)
   vec.u8 = vcntq_u8(vec.u8);
 #elif defined(SIMDLE_ARCH_INTEL_AVX512BITALG) && defined(SIMDLE_ARCH_INTEL_AVX512VL)
@@ -27,7 +27,7 @@ simdle_cnt_v128_u8 (simdle_v128_t vec) {
 }
 
 inline simdle_v128_t
-simdle_cnt_v128_u16 (simdle_v128_t vec) {
+simdle_cnt_v128_u16(simdle_v128_t vec) {
 #if defined(SIMDLE_ARCH_ARM_NEON)
   vec.u16 = vpaddlq_u8(vcntq_u8(vec.u8));
 #elif defined(SIMDLE_ARCH_INTEL_AVX512BITALG) && defined(SIMDLE_ARCH_INTEL_AVX512VL)
@@ -47,7 +47,7 @@ simdle_cnt_v128_u16 (simdle_v128_t vec) {
 }
 
 inline simdle_v128_t
-simdle_cnt_v128_u32 (simdle_v128_t vec) {
+simdle_cnt_v128_u32(simdle_v128_t vec) {
 #if defined(SIMDLE_ARCH_ARM_NEON)
   vec.u32 = vpaddlq_u16(vpaddlq_u8(vcntq_u8(vec.u8)));
 #elif defined(SIMDLE_ARCH_INTEL_AVX512VPOPCNTDQ) && defined(SIMDLE_ARCH_INTEL_AVX512VL)

@@ -3,7 +3,7 @@
 #include "../../include/simdle.h"
 
 int
-main () {
+main() {
   simdle_v128_t v = {
     .u16 = {1, 2, 3, 4, 5, 6, 7, 8},
   };

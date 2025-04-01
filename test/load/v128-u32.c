@@ -3,7 +3,7 @@
 #include "../../include/simdle.h"
 
 int
-main () {
+main() {
   const uint32_t arr[] = {1, 2, 3, 4};
 
   simdle_v128_t vec = simdle_load_v128_u32(arr);

@@ -7,7 +7,7 @@
 #include "vec.h"
 
 inline simdle_v128_t
-simdle_load_v128_u8 (const uint8_t arr[]) {
+simdle_load_v128_u8(const uint8_t arr[]) {
   simdle_v128_t vec;
 
 #if defined(SIMDLE_ARCH_ARM_NEON)
@@ -20,7 +20,7 @@ simdle_load_v128_u8 (const uint8_t arr[]) {
 }
 
 inline simdle_v128_t
-simdle_load_v128_u16 (const uint16_t arr[]) {
+simdle_load_v128_u16(const uint16_t arr[]) {
   simdle_v128_t vec;
 
 #if defined(SIMDLE_ARCH_ARM_NEON)
@@ -33,7 +33,7 @@ simdle_load_v128_u16 (const uint16_t arr[]) {
 }
 
 inline simdle_v128_t
-simdle_load_v128_u32 (const uint32_t arr[]) {
+simdle_load_v128_u32(const uint32_t arr[]) {
   simdle_v128_t vec;
 
 #if defined(SIMDLE_ARCH_ARM_NEON)

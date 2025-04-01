@@ -5,7 +5,7 @@
 #include "vec.h"
 
 inline uint16_t
-simdle_sum_v128_u8 (simdle_v128_t vec) {
+simdle_sum_v128_u8(simdle_v128_t vec) {
   uint16_t r = 0;
 
 #if defined(SIMDLE_ARCH_ARM_NEON)
@@ -20,7 +20,7 @@ simdle_sum_v128_u8 (simdle_v128_t vec) {
 }
 
 inline uint32_t
-simdle_sum_v128_u16 (simdle_v128_t vec) {
+simdle_sum_v128_u16(simdle_v128_t vec) {
   uint32_t r = 0;
 
 #if defined(SIMDLE_ARCH_ARM_NEON)
@@ -35,7 +35,7 @@ simdle_sum_v128_u16 (simdle_v128_t vec) {
 }
 
 inline uint64_t
-simdle_sum_v128_u32 (simdle_v128_t vec) {
+simdle_sum_v128_u32(simdle_v128_t vec) {
   uint64_t r = 0;
 
 #if defined(SIMDLE_ARCH_ARM_NEON)
